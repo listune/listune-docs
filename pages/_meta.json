@@ -4,6 +4,12 @@
   "commands": "Command Reference",
   "dashboard": "Dashboard Guide",
   "support": "Support",
+  "website": {
+    "title": "Website ↗",
+    "type": "page",
+    "href": "https://listune.app",
+    "newWindow": true
+  },
   "invite": {
     "title": "Invite Bot ↗",
     "type": "page",
@@ -20,18 +26,6 @@
     "title": "How to Support ↗",
     "type": "page",
     "href": "https://listune.app/how-to-support",
-    "newWindow": true
-  },
-  "privacy-policy": {
-    "title": "Privacy Policy ↗",
-    "type": "page",
-    "href": "https://listune.app/privacy-policy",
-    "newWindow": true
-  },
-  "terms-of-service": {
-    "title": "Terms of Service ↗",
-    "type": "page",
-    "href": "https://listune.app/terms-of-service",
     "newWindow": true
   }
 }
