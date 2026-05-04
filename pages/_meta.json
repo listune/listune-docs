@@ -1,0 +1,37 @@
+{
+  "index": "Introduction",
+  "quickstart": "Getting Started",
+  "commands": "Command Reference",
+  "dashboard": "Dashboard Guide",
+  "support": "Support",
+  "invite": {
+    "title": "Invite Bot ↗",
+    "type": "page",
+    "href": "https://listune.app/invite",
+    "newWindow": true
+  },
+  "serversupport": {
+    "title": "Support Server ↗",
+    "type": "page",
+    "href": "https://listune.app/support",
+    "newWindow": true
+  },
+  "how-to-support": {
+    "title": "How to Support ↗",
+    "type": "page",
+    "href": "https://listune.app/how-to-support",
+    "newWindow": true
+  },
+  "privacy-policy": {
+    "title": "Privacy Policy ↗",
+    "type": "page",
+    "href": "https://listune.app/privacy-policy",
+    "newWindow": true
+  },
+  "terms-of-service": {
+    "title": "Terms of Service ↗",
+    "type": "page",
+    "href": "https://listune.app/terms-of-service",
+    "newWindow": true
+  }
+}

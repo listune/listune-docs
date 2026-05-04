@@ -1,0 +1,173 @@
+# Command Reference
+
+This page lists every slash command available in Listune, organized by category. Each entry includes the command name, a brief description, required options, and any access requirements.
+
+import { Callout } from 'nextra/components'
+
+<Callout type="info">
+Commands marked with **DJ Role** require you to have the configured DJ role in your server, or to be the server owner.
+</Callout>
+
+<Callout type="info">
+**Looking for a real-time list?** You can always find the most detailed, up-to-date, and interactive list of all commands at [listune.app/commands](https://listune.app/commands). Check there if you feel this page is missing anything.
+</Callout>
+
+---
+
+## Music Commands
+
+These are the core playback commands for controlling music in your voice channel.
+
+| Command | Description | Options | DJ Role |
+| --- | --- | --- | --- |
+| `/play` | Play a song or add it to the queue | `search` (required) - song name or URL | No |
+| `/search` | Search for a song and pick from results | `query` (required) - search term | No |
+| `/playnext` | Add a song to play next in the queue | `search` (required) - song name or URL | Yes |
+| `/pause` | Pause the current track | None | Yes |
+| `/resume` | Resume a paused track | None | Yes |
+| `/skip` | Skip the current track | None | Yes |
+| `/skipto` | Skip to a specific position in the queue | `position` (required) - queue number | Yes |
+| `/previous` | Play the previous track | None | Yes |
+| `/stop` | Stop playback and clear the queue | None | Yes |
+| `/nowplaying` | Show details about the current track | None | No |
+| `/queue` | View the current song queue | `page` (optional) - page number | No |
+| `/shuffle` | Shuffle the songs in the queue | None | No |
+| `/loop` | Set the loop mode | `mode` (required) - none, song, or queue | Yes |
+| `/autoplay` | Toggle autoplay mode for recommendations | None | Yes |
+| `/volume` | Adjust the playback volume (1 to 100) | `amount` (required) - volume level | Yes |
+| `/seek` | Jump to a specific time in the track | `time` (required) - format `M:SS` | Yes |
+| `/forward` | Skip forward 10 seconds | None | Yes |
+| `/rewind` | Skip backward 10 seconds | None | Yes |
+| `/replay` | Restart the current track | None | Yes |
+| `/remove` | Remove a song from the queue | `position` (required) - queue position | Yes |
+| `/clearqueue` | Remove all songs from the queue | None | Yes |
+| `/join` | Make the bot join your voice channel | None | No |
+| `/forcejoin` | Force the bot to move to your channel | None | Yes |
+| `/lyrics` | View lyrics for the current or searched song | `input` (optional) - song name | No |
+| `/music trivia` | Start a music trivia game | `playlist` (optional) - Spotify playlist URL | No |
+
+### About Autoplay
+
+When autoplay is enabled, Listune will automatically add recommended songs to the queue when it runs out of tracks. Recommendations are based on the most recently played song. This keeps the music going even after your queue is empty.
+
+### About Music Trivia
+
+Music Trivia is an interactive game where Listune plays short clips of songs and players compete to guess the title and artist. You can start a game with a random selection of songs or provide a Spotify playlist URL to use as the song pool.
+
+---
+
+## Filter Commands
+
+Audio filters modify the sound of the music in real time. All filter commands require the DJ role.
+
+| Command | Description | Options |
+| --- | --- | --- |
+| `/bassboost` | Apply a bass boost effect | `amount` (optional) - intensity from -10 to 10 |
+| `/nightcore` | Apply a nightcore (sped-up, higher pitch) effect | None |
+| `/vaporwave` | Apply a vaporwave (slowed-down) effect | None |
+| `/karaoke` | Reduce vocals for a karaoke-style effect | None |
+| `/tremolo` | Apply a tremolo (wavering volume) effect | None |
+| `/vibrato` | Apply a vibrato (wavering pitch) effect | None |
+| `/3d` | Apply a 3D spatial rotation effect | None |
+| `/bass` | Boost the bass frequencies | None |
+| `/china` | Apply a Chinese music style filter | None |
+| `/chipmunk` | Apply a chipmunk voice effect | None |
+| `/darthvader` | Apply a deep Darth Vader voice effect | None |
+| `/daycore` | Apply a daycore (slowed with reverb) effect | None |
+| `/doubletime` | Double the playback speed | None |
+| `/earrape` | Maximize volume distortion | None |
+| `/nightcore` | Speed up with higher pitch | None |
+| `/pitch` | Adjust the pitch of the audio | `amount` (required) - pitch value |
+| `/pop` | Apply a pop music equalizer preset | None |
+| `/rate` | Change the playback rate | `amount` (required) - rate value |
+| `/slowmotion` | Slow down the playback | None |
+| `/soft` | Apply a soft, mellow equalizer | None |
+| `/speed` | Change the playback speed | `amount` (required) - speed value |
+| `/superbass` | Apply an extreme bass boost | None |
+| `/television` | Apply a TV speaker simulation | None |
+| `/treblebass` | Boost both treble and bass | None |
+| `/vibrate` | Apply a vibrating effect | None |
+| `/equalizer` | Manually set equalizer band values | `band` and `gain` (required) |
+| `/reset` | Remove all active filters | None |
+
+---
+
+## Playlist Commands
+
+Manage your personal playlists directly from Discord. All playlist commands use the `/pl` prefix.
+
+| Command | Description | Options |
+| --- | --- | --- |
+| `/pl create` | Create a new playlist | `name` (required), `description` (optional) |
+| `/pl play` | Load a playlist into the queue and play | `id` (required) - playlist ID |
+| `/pl add` | Add the current song to a playlist | `id` (required) - playlist ID |
+| `/pl remove` | Remove a track from a playlist | `id` (required), `position` (required) |
+| `/pl delete` | Delete an entire playlist | `id` (required) - playlist ID |
+| `/pl all` | View all your playlists | `page` (optional) |
+| `/pl info` | View details about a specific playlist | `id` (required) - playlist ID |
+| `/pl detail` | View all tracks in a playlist | `id` (required) - playlist ID |
+| `/pl editor` | Edit a playlist's name, description, and privacy | `id` (required) - playlist ID |
+| `/pl savequeue` | Save the current queue to a playlist | `id` (required) - playlist ID |
+
+### Playlist Privacy
+
+Playlists are private by default. You can make them public using the `/pl editor` command, which allows other users to view and import your playlist using its ID.
+
+---
+
+## Settings Commands
+
+Configure how Listune behaves in your server. Most settings commands require the **Manage Server** permission.
+
+| Command | Description | Options |
+| --- | --- | --- |
+| `/setup` | Create or delete a song request channel | `type` (required) - Create or Delete |
+| `/247` | Enable or disable 24/7 voice channel mode | `type` (required) - Enable or Disable |
+| `/language` | Change the bot's language for your server | `input` (required) - language code |
+| `/djrole` | Set or disable the DJ role for your server | `action` (required) - set or disable, `role` (optional) |
+| `/control buttons` | Enable or disable player control buttons on now-playing messages | `type` (required) - Enable or Disable |
+| `/player control` | Configure player embed settings | `setting` (required), `value` (required) |
+| `/themes` | Change the music card visual theme | `themes` (required) - Default, Classic, or Dynamic |
+| `/customize` | Customize the bot's profile in your server | `action` (required) - View, Submit, or Reset |
+| `/lastfm` | Manage your Last.fm account connection | `type` (required) - Login, Logout, or View |
+| `/status voicechannel` | Toggle voice channel status display | `type` (required) - True or False |
+| `/tempvoice` | Create or delete temporary voice channels | `status` (required) - Create or Delete |
+| `/prefix` | Change the bot's message prefix (legacy) | `input` (required) - new prefix |
+
+### About the DJ Role
+
+When a DJ role is configured, only members with that role (or the server owner) can use commands that control playback, such as skip, pause, volume, seek, and filter commands. This is useful for preventing unwanted interruptions during listening sessions.
+
+### About Last.fm Integration
+
+Listune can scrobble (log) every song you listen to directly to your Last.fm profile. Use `/lastfm type:Login` to connect your account. Once connected, use `/lastfm type:View` to see your Last.fm dashboard with your top artists, albums, and tracks.
+
+---
+
+## Info Commands
+
+View information about your account, the bot, and your listening activity.
+
+| Command | Description | Options |
+| --- | --- | --- |
+| `/help` | View a list of all commands with an interactive menu | `command` (optional) - specific command name |
+| `/favorites` | View and manage your liked songs | None |
+| `/history` | View your recently played songs | None |
+| `/profile` | View your user profile and listening statistics | `user` (optional) - another user |
+| `/about` | View information about the bot | None |
+| `/info` | View the bot's technical status | None |
+| `/globalstats` | View global listening statistics | None |
+| `/guildstats` | View listening statistics for your server | None |
+| `/rating` | Rate the bot | None |
+| `/report` | Report a bug or issue | None |
+| `/suggestions` | Submit a feature suggestion | None |
+| `/privacypolicy` | View the privacy policy | None |
+| `/termsofservices` | View the terms of service | None |
+
+### About Favorites
+
+When a song is playing, you can like it using the heart button on the now-playing embed. Liked songs are saved to your personal favorites list. Use `/favorites` to browse, play, or remove songs from your collection.
+
+### About History
+
+Listune automatically tracks every song you listen to. Use `/history` to view a deduplicated list of your recently played tracks, sorted with the most recent first. You can play individual songs or entire pages directly from the history view.
